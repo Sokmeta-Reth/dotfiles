@@ -1,0 +1,26 @@
+#!/bin/zsh
+
+# Write installed Homebrew packages back to homebrew/Brewfile.
+# Anything already listed in homebrew/Brewfile.extras is left out.
+
+set -e
+
+export DOTFILES_ROOT=${0:A:h}
+source "$DOTFILES_ROOT/lib/log"
+
+brewfile="$DOTFILES_ROOT/homebrew/Brewfile"
+extras="$DOTFILES_ROOT/homebrew/Brewfile.extras"
+tmp=$(mktemp)
+trap 'rm -f "$tmp"' EXIT
+
+brew bundle dump --file="$tmp" --force
+
+mkdir -p "${brewfile:h}"
+if [[ -f $extras ]]; then
+  grep -vxF -f "$extras" "$tmp" > "$brewfile" || true
+else
+  cp "$tmp" "$brewfile"
+fi
+
+success "updated ${brewfile#$DOTFILES_ROOT/}"
+git -C "$DOTFILES_ROOT" diff --stat -- "$brewfile"

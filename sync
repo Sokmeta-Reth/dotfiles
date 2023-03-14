@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+# Link every topic's files into place, as listed in <topic>/links.
+# Safe to re-run.
+
+export DOTFILES_ROOT=${0:A:h}
+source "$DOTFILES_ROOT/lib/log"
+source "$DOTFILES_ROOT/lib/link"
+
+failed=0
+
+for links_file in $DOTFILES_ROOT/*/links(N); do
+  link_topic "$links_file" || failed=1
+done
+
+if (( failed )); then
+  error "sync finished with errors"
+  exit 1
+fi
+
+success "sync done"

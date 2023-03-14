@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+# Install everything: Homebrew first, then every topic's install script.
+# Safe to re-run.
+
+set -e
+
+export DOTFILES_ROOT=${0:A:h}
+source "$DOTFILES_ROOT/lib/log"
+
+# homebrew goes first, other topics depend on it
+scripts=($DOTFILES_ROOT/homebrew/install(N) $DOTFILES_ROOT/*/install(N))
+typeset -U scripts
+
+for script in $scripts; do
+  info "${script:h:t}"
+  zsh "$script"
+done
+
+success "install done, run ./sync to link config files"
