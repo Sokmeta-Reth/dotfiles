@@ -1,0 +1,11 @@
+#!/bin/zsh
+
+# location to store brew packages
+# some formulaes don't include path
+# this is a workaround to add them to the path
+typeset -U path
+path=(
+    /opt/homebrew/bin
+    /opt/homebrew/opt/mysql-client/bin
+    $path
+)

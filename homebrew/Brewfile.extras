@@ -1,0 +1,26 @@
+tap "leoafarias/fvm"
+
+# ----------------------------------- development -----------------------------------
+brew "ansible"
+brew "httpie"
+brew "leoafarias/fvm/fvm"
+cask "mockoon"
+brew "mysql-client"
+brew "php"
+brew "trivy"
+
+# ----------------------------------- networking -----------------------------------
+brew "cloudflared"
+cask "ngrok"
+cask "proxyman"
+
+# ----------------------------------- media & files -----------------------------------
+brew "exiftool"
+brew "poppler"
+
+# ----------------------------------- productivity -----------------------------------
+cask "inkscape"
+cask "modern-csv"
+cask "deepl"
+
+# ----------------------------------- common app -----------------------------------

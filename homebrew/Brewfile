@@ -1,0 +1,65 @@
+tap "hashicorp/tap"
+
+# ----------------------------------- development -----------------------------------
+brew "bat"
+cask "dbeaver-community"
+brew "fzf"
+brew "gh"
+brew "n"
+brew "exa"
+brew "neovim"
+cask "postman"
+brew "pyenv"
+brew "hashicorp/tap/terraform"
+cask "visual-studio-code"
+brew "yq"
+cask "kitty"
+
+# ----------------------------------- shell utilities -----------------------------------
+brew "coreutils"
+brew "mas"
+
+# ----------------------------------- productivity -----------------------------------
+cask "notion"
+
+# ----------------------------------- common app -----------------------------------
+cask "vlc"
+cask "brave-browser"
+cask "slack"
+cask "spotify"
+cask "discord"
+cask "nordvpn"
+cask "folx"
+cask "telegram"
+
+# ----------------------------------- mac app store -----------------------------------
+mas "Xcode", id: 497799835
+
+
+# ----------------------------------- vs code ext -------------------------------------
+vscode "golang.go"
+vscode "dbaeumer.vscode-eslint"
+vscode "ms-python.python"
+vscode "editorconfig.editorconfig"
+vscode "grapecity.gc-excelviewer"
+vscode "eamodio.gitlens"
+vscode "teabyii.ayu"
+vscode "esbenp.prettier-vscode"
+vscode "foxundermoon.shell-format"
+vscode "bmewburn.vscode-intelephense-client"
+vscode "bierner.markdown-mermaid"
+vscode "mechatroner.rainbow-csv"
+vscode "bradlc.vscode-tailwindcss"
+vscode "intellsmi.comment-translate"
+vscode "adpyke.codesnap"
+vscode "ms-python.vscode-pylance"
+vscode "beardedbear.beardedicons"
+vscode "irongeek.vscode-env"
+vscode "ms-toolsai.jupyter"
+vscode "ms-vscode.makefile-tools"
+vscode "astro-build.astro-vscode"
+vscode "ms-toolsai.jupyter-keymap"
+vscode "ms-toolsai.jupyter-renderers"
+vscode "ms-toolsai.vscode-jupyter-cell-tags"
+vscode "ms-toolsai.vscode-jupyter-slideshow"
+vscode "ms-python.autopep8"
