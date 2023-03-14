@@ -1,0 +1,46 @@
+#!/bin/zsh
+
+# Symlink helpers used by sync. Requires lib/log.
+
+BACKUP_DIR="$HOME/.dotfiles-backup/$(date +%Y%m%d-%H%M%S)"
+
+# link_file <src> <dest>
+# - correct link already in place: leave it
+# - link pointing elsewhere: replace it
+# - real file or directory: move it to $BACKUP_DIR, then link
+link_file() {
+  local src=$1 dest=$2
+
+  if [[ ! -e $src ]]; then
+    error "missing source: $src"
+    return 1
+  fi
+
+  if [[ -L $dest ]]; then
+    [[ $(readlink "$dest") == "$src" ]] && return 0
+    rm "$dest"
+  elif [[ -e $dest ]]; then
+    local backup="$BACKUP_DIR${dest#$HOME}"
+    mkdir -p "${backup:h}"
+    mv "$dest" "$backup"
+    warn "backed up ${dest/#$HOME/~} → ${backup/#$HOME/~}"
+  fi
+
+  mkdir -p "${dest:h}"
+  ln -s "$src" "$dest"
+  success "linked ${dest/#$HOME/~} → ${src/#$HOME/~}"
+}
+
+# link_topic <links_file>
+# Each line is "<source> <destination>", source relative to the topic folder.
+# Blank lines and lines starting with # are ignored. ~ expands to $HOME.
+link_topic() {
+  local links_file=$1
+  local topic_dir=${links_file:A:h}
+  local src dest
+
+  while read -r src dest; do
+    [[ -z $src || $src == \#* ]] && continue
+    link_file "$topic_dir/$src" "${dest/#\~/$HOME}"
+  done < "$links_file"
+}
