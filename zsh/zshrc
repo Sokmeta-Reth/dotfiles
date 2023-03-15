@@ -1,5 +1,12 @@
 #!/bin/zsh
 
+# Enable Powerlevel10k instant prompt. Should stay close to the top of zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # shortcut to this dotfiles path is $DOTFILES_ROOT
 # (resolved from the ~/.zshrc symlink, so the repo can live anywhere)
 export DOTFILES_ROOT=${${(%):-%x}:A:h:h}
@@ -29,6 +36,9 @@ done
 
 # load plugins
 source $DOTFILES_ROOT/zsh/plugins
+
+# load theme
+source $DOTFILES_ROOT/zsh/theme
 
 # load zstyles
 source $DOTFILES_ROOT/zsh/completion

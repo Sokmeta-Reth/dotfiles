@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+# This file is sourced by zshrc and contains the theme configuration.
+# It loads the powerlevel10k theme (cloned on first run)
+# and the p10k configuration file.
+[[ -f ~/powerlevel10k/powerlevel10k.zsh-theme ]] || git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+
+[[ -f ~/.p10k-dark.zsh ]] && source ~/.p10k-dark.zsh
