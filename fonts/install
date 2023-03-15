@@ -1,0 +1,25 @@
+#!/bin/zsh
+
+# Install MesloLGS NF fonts (for current user).
+# We are using MesloLGS NF fonts to ensure compatibility with Powerlevel10k
+
+source "$DOTFILES_ROOT/lib/log"
+
+FONT_DIR="$HOME/Library/Fonts"
+BASE_URL="https://github.com/romkatv/powerlevel10k-media/raw/master"
+FONTS=(
+  "MesloLGS NF Regular.ttf"
+  "MesloLGS NF Bold.ttf"
+  "MesloLGS NF Italic.ttf"
+  "MesloLGS NF Bold Italic.ttf"
+)
+
+mkdir -p "$FONT_DIR"
+
+for font in $FONTS; do
+  [[ -f "$FONT_DIR/$font" ]] && continue
+  info "downloading $font"
+  curl -fLsS -o "$FONT_DIR/$font" "$BASE_URL/${font// /%20}"
+done
+
+info "set your terminal font to 'MesloLGS NF'"
