@@ -1,0 +1,34 @@
+#!/bin/zsh
+
+# shortcut to this dotfiles path is $DOTFILES_ROOT
+# (resolved from the ~/.zshrc symlink, so the repo can live anywhere)
+export DOTFILES_ROOT=${${(%):-%x}:A:h:h}
+
+# Source/Load zinit
+ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
+if [[ -f "$ZINIT_HOME/zinit.zsh" ]]; then
+    source "$ZINIT_HOME/zinit.zsh"
+else
+    echo "Zinit not found. Run $DOTFILES_ROOT/install to install it."
+fi
+
+path_file=($DOTFILES_ROOT/**/*/path(N))
+for file in $path_file; do
+    source $file
+done
+
+alias_file=($DOTFILES_ROOT/**/*/alias(N))
+for alias in $alias_file; do
+    source $alias
+done
+
+function_file=($DOTFILES_ROOT/**/*/function(N))
+for function in $function_file; do
+    source $function
+done
+
+# load plugins
+source $DOTFILES_ROOT/zsh/plugins
+
+# load zstyles
+source $DOTFILES_ROOT/zsh/completion
