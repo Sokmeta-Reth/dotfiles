@@ -37,11 +37,13 @@ link_file() {
 link_topic() {
   local links_file=$1
   local topic_dir=${links_file:A:h}
-  local src dest rc=0
+  local src dest src_path rc=0
 
   while read -r src dest; do
     [[ -z $src || $src == \#* ]] && continue
-    link_file "$topic_dir/$src" "${dest/#\~/$HOME}" || rc=1
+    # :A normalises the path, so "." links the topic folder itself
+    src_path="$topic_dir/$src"
+    link_file "${src_path:A}" "${dest/#\~/$HOME}" || rc=1
   done < "$links_file"
 
   return $rc
