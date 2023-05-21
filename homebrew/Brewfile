@@ -25,6 +25,7 @@ cask "notion"
 # ----------------------------------- common app -----------------------------------
 cask "vlc"
 cask "brave-browser"
+cask "google-chrome"
 cask "slack"
 cask "spotify"
 cask "discord"
