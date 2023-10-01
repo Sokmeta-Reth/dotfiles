@@ -61,9 +61,6 @@ return {
           map("<leader>rn", vim.lsp.buf.rename, "Rename")
           map("<leader>ca", vim.lsp.buf.code_action, "Code action")
           map("<leader>e", vim.diagnostic.open_float, "Line diagnostics")
-          map("<leader>cf", function()
-            vim.lsp.buf.format({ async = true })
-          end, "Format buffer")
         end,
       })
     end,
