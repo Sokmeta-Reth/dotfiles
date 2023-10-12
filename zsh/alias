@@ -12,9 +12,10 @@ alias cl="clear" # clear screen
 alias dev="cd ~/dev"
 
 # Listing
-alias ls="exa -lahF --group-directories-first"
-alias lsd="exa -lahFD"
-alias lst="exa -T --group-directories-first" # tree view (specify depth -L=xxx)
+alias ls="eza -lAhF --group-directories-first"
+alias lsd="eza -lAhF --only-dirs"
+alias lsf="eza -lAhF --only-files"
+alias lst="eza -T --group-directories-first" # tree view (specify depth -L=xxx)
 
 # IP
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
