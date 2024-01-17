@@ -3,6 +3,7 @@ tap "leoafarias/fvm"
 # ----------------------------------- development -----------------------------------
 brew "ansible"
 brew "httpie"
+brew "k6"
 brew "leoafarias/fvm/fvm"
 cask "mockoon"
 brew "mysql-client"
