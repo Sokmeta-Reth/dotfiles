@@ -4,8 +4,7 @@ zinit light zsh-users/zsh-autosuggestions
 
 # fzf integration (keybindings and completion)
 zinit light Aloxaf/fzf-tab
-source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
-source /opt/homebrew/opt/fzf/shell/completion.zsh
+eval "$(fzf --zsh)"
 
 # Add in snippets
 zinit snippet OMZL::git.zsh
