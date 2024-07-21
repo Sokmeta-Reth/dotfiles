@@ -9,6 +9,7 @@ cask "mockoon"
 brew "mysql-client"
 brew "php"
 brew "trivy"
+brew "ollama"
 
 # ----------------------------------- networking -----------------------------------
 brew "cloudflared"
