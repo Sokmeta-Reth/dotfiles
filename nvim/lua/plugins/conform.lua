@@ -5,8 +5,8 @@ return {
 		{
 			"<leader>cf",
 			function()
-				-- lsp_fallback: filetypes without a formatter (go) use the LSP
-				require("conform").format({ async = true, lsp_fallback = true })
+				-- filetypes without a formatter (go) fall back to the LSP
+				require("conform").format({ async = true, lsp_format = "fallback" })
 			end,
 			desc = "Format buffer",
 		},
