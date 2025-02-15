@@ -1,11 +1,8 @@
-tap "leoafarias/fvm"
-
 # ----------------------------------- development -----------------------------------
 brew "ansible"
 brew "cloud-sql-proxy"
 brew "httpie"
 brew "k6"
-brew "leoafarias/fvm/fvm"
 cask "mockoon"
 brew "mysql-client"
 brew "php"
