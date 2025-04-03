@@ -1,0 +1,35 @@
+#!/bin/zsh
+
+cd "$(dirname "$0")/.."
+DOTFILES_ROOT=$(pwd -P)
+
+link_file() {
+    local src=$1
+    local dest=$2
+
+    if [[ -z "$src" || -z "$dest" ]]; then
+        echo "Usage: link_file <source> <destination>"
+        return 1
+    fi
+
+    if [[ -L "$dest" || -e "$dest" ]]; then
+        echo "⚠️  Link or file already exists at '$dest' – skipping."
+    else
+        ln -s "$src" "$dest"
+        echo "🔗 Linking '$src' → '$dest'"
+    fi
+}
+
+create_symlink() {
+    source "$DOTFILES_ROOT/symlinks.sh" || {echo "Error: symlinks.sh not found."; return 1;}
+
+    for src in "${(@k)symlinks}"; do
+        local dest="${symlinks[$src]}"
+        link_file "$src" "$dest"
+    done
+
+}
+
+create_symlink
+
+echo "✅ Symlinks done."
