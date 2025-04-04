@@ -15,6 +15,7 @@ link_file() {
     if [[ -L "$dest" || -e "$dest" ]]; then
         echo "⚠️  Link or file already exists at '$dest' – skipping."
     else
+        mkdir -p "$(dirname "$dest")"
         ln -s "$src" "$dest"
         echo "🔗 Linking '$src' → '$dest'"
     fi
