@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# Shortcuts
+alias reload!=". ~/.zshrc"
+alias cl="clear" # clear screen
+alias dev="cd ~/dev"
+
+# Listing
+alias ls="eza -lAhF --group-directories-first"
+alias lsd="eza -lAhF --only-dirs"
+alias lsf="eza -lAhF --only-files --show-symlinks"
+alias lst="eza -T --group-directories-first" # tree view (specify depth -L=xxx)
+
+# IP
+alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias localip="ipconfig getifaddr en0"
+
+# Recursively delete `.DS_Store` files
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+
+# bat
+alias cat="bat"
