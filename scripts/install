@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+# list of full paths to exclude
+exclude_files=(
+    "$(realpath "$0")"   # this file
+)
+
+# build the exclude expression
+exclude_expr=()
+for f in $exclude_files; do
+  exclude_expr+=(! -path "$f")
+done
+
+# find all install files in the DOTFILES_ROOT directory, excluding the ones in the exclude list
+install_files=($(find "$DOTFILES_ROOT" -mindepth 2 -maxdepth 2 -type f -name "install" $exclude_expr))
+
+# run each install file
+for file in "${install_files[@]}"; do
+    "$file"
+done
+
+
