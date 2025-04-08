@@ -13,3 +13,6 @@ function_file=($DOTFILES_ROOT/**/*/function(N))
 for function in $function_file; do
     source $function
 done
+
+# load theme
+source $DOTFILES_ROOT/zsh/theme

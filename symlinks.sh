@@ -9,4 +9,5 @@ DOTFILES_ROOT=$(pwd -P)
 # The destination path is the absolute path where the symlink will be created.
 declare -A symlinks=(
   ["$DOTFILES_ROOT/zsh/zshrc"]="$HOME/.zshrc"
+  ["$DOTFILES_ROOT/zsh/p10k"]="$HOME/.p10k.zsh"
 )
