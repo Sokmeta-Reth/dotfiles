@@ -4,8 +4,8 @@
 export DOTFILES_ROOT=$HOME/.dotfiles
 
 path_file=($DOTFILES_ROOT/**/*/path(N))
-for path in $path_file; do
-    source $path
+for file in $path_file; do
+    source $file
 done
 
 alias_file=($DOTFILES_ROOT/**/*/alias(N))
