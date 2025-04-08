@@ -3,6 +3,10 @@
 # shortcut to this dotfiles path is $DOTFILES_ROOT
 export DOTFILES_ROOT=$HOME/.dotfiles
 
+path_file=($DOTFILES_ROOT/**/*/path(N))
+for path in $path_file; do
+    source $path
+done
 
 alias_file=($DOTFILES_ROOT/**/*/alias(N))
 for alias in $alias_file; do
