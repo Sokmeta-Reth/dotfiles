@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+exist () {
+    command -v "$1" >/dev/null 2>&1
+}
+
+mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
+man() {
+  env MANPAGER="sh -c 'col -bx | bat --language=man --paging=always'" command man "$@"
+}
