@@ -3,5 +3,6 @@
 # This file is sourced by zshrc and contains the theme configuration.
 # It loads the powerlevel10k theme installed by the install script (in Brewfile).
 # It also loads the p10k configuration file if it exists.
-[[ ! -f ~/powerlevel10k/powerlevel10k.zsh-theme ]] || source ~/powerlevel10k/powerlevel10k.zsh-theme
+[[ -f ~/powerlevel10k/powerlevel10k.zsh-theme ]] || git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
