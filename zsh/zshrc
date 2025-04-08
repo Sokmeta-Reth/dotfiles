@@ -20,3 +20,6 @@ done
 
 # load theme
 source $DOTFILES_ROOT/zsh/theme
+
+# load zstyles
+source $DOTFILES_ROOT/zsh/completion
