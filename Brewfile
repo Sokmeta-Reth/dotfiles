@@ -1,5 +1,6 @@
 tap "hashicorp/tap"
 tap "koekeishiya/formulae"
+tap "leoafarias/fvm"
 
 # ----------------------------------- development -----------------------------------
 cask "alacritty"
@@ -11,6 +12,7 @@ brew "eza"
 brew "git"
 cask "google-cloud-sdk"
 brew "httpie"
+brew "leoafarias/fvm/fvm"
 cask "mockoon"
 brew "mysql-client"
 brew "n"
