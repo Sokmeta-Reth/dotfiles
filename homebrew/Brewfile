@@ -16,6 +16,7 @@ brew "uv"
 brew "yq"
 cask "zed"
 cask "kitty"
+cask "claude"
 
 # ----------------------------------- shell utilities -----------------------------------
 brew "coreutils"
