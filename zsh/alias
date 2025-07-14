@@ -13,6 +13,7 @@ alias dev="cd ~/dev"
 
 # Listing
 alias ls="eza -lAhF --group-directories-first"
+alias lsize="eza -lAhSF --total-size"
 alias lsd="eza -lAhF --only-dirs"
 alias lsf="eza -lAhF --only-files --show-symlinks"
 alias lst="eza -T --group-directories-first" # tree view (specify depth -L=xxx)
