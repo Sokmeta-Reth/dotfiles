@@ -10,5 +10,17 @@ else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# install packages (bundle)
-brew bundle --file=$DOTFILES_ROOT/Brewfile
+# install core (bundle)
+brew bundle --file=$DOTFILES_ROOT/Brewfile-core
+
+# install extras (bundle)
+# ask user if they want to install extras
+echo "Please check the Brewfile-extras file to see what extras will be installed."
+read -q "REPLY?Do you want to install extras? (y/n) "
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo "Installing extras..."
+  brew bundle --file=$DOTFILES_ROOT/Brewfile-extras
+else
+  echo "Skipping extras installation."
+fi

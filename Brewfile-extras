@@ -1,0 +1,21 @@
+tap "leoafarias/fvm"
+# ----------------------------------- development -----------------------------------
+cask "alacritty"
+brew "ansible"
+cask "google-cloud-sdk"
+brew "httpie"
+brew "leoafarias/fvm/fvm"
+cask "mockoon"
+brew "mysql-client"
+
+# ----------------------------------- productivity -----------------------------------
+cask "inkscape"
+cask "notion"
+cask "microsoft-excel"
+cask "microsoft-powerpoint"
+cask "modern-csv"
+cask "deepl"
+
+# ----------------------------------- common app -----------------------------------
+
+cask "slack"
