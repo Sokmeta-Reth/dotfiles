@@ -5,4 +5,12 @@
 # It also loads the p10k configuration file if it exists.
 [[ -f ~/powerlevel10k/powerlevel10k.zsh-theme ]] || git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Detect macOS system appearance
+IS_DARK_MODE=$(osascript -e 'tell application "System Events" to tell appearance preferences to get dark mode')
+
+if [[ "$IS_DARK_MODE" == "true" ]]; then
+  source ~/.p10k-dark.zsh
+else
+  source ~/.p10k-light.zsh
+fi
