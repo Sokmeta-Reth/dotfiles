@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+# Directory to install fonts (for current user)
+FONT_DIR="$HOME/Library/Fonts"
+
+# Create fonts directory
+mkdir -p "$FONT_DIR"
+
+# Array of font URLs
+# We are using MesloLGS NF fonts to ensure compatibility with Powerlevel10k
+FONTS=(
+  "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"
+  "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf"
+  "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf"
+  "https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf"
+)
+
+url_decode() {
+  echo -n "$1" | sed 's/%20/ /g'
+}
+
+# Download each font
+for FONT_URL in "${FONTS[@]}"; do
+  ENCODED_NAME=$(basename "$FONT_URL")
+  DECODED_NAME=$(url_decode "$ENCODED_NAME")
+  echo "Downloading $DECODED_NAME..."
+  curl -Ls -o "$FONT_DIR/$DECODED_NAME" "$FONT_URL"
+done
+
+# Prompt user to update Terminal settings
+trap 'echo "Fonts installed.\n👉 Please go to Terminal → Preferences → Profiles → Text and set the font to '\''MesloLGS NF'\''."' EXIT
