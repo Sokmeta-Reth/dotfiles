@@ -1,5 +1,6 @@
 # ----------------------------------- development -----------------------------------
 brew "ansible"
+cask "gcloud-cli"
 brew "cloud-sql-proxy"
 brew "httpie"
 brew "k6"
@@ -14,6 +15,7 @@ brew "cocoapods"
 brew "cloudflared"
 cask "ngrok"
 cask "proxyman"
+cask "tailscale-app"
 
 # ----------------------------------- media & files -----------------------------------
 brew "exiftool"
