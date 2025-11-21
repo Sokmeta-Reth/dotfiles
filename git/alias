@@ -1,8 +1,0 @@
-#!/bin/zsh
-
-alias g="git"
-alias gpl="git pull --prune"
-alias gf="git fetch"
-alias gb="git branch"
-alias gp="git push"
-alias grs="git reset --soft HEAD^"

@@ -5,3 +5,9 @@ zinit light zsh-users/zsh-autosuggestions
 # fzf integration (keybindings and completion)
 zinit light Aloxaf/fzf-tab
 eval "$(fzf --zsh)"
+
+# Add in snippets
+zinit snippet OMZL::git.zsh
+zinit snippet OMZP::git
+zinit snippet OMZP::docker-compose
+zinit snippet OMZP::command-not-found
