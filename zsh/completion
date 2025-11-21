@@ -23,9 +23,13 @@ setopt hist_ignore_dups
 setopt hist_find_no_dups
 
 # Add "zstyles" for Completions & Other Things
-zstyle ':completion:*:*:*:*:*' menu select
+zstyle ':completion:*:*:*:*:*' menu no
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':plugin:history-search-multi-word' clear-on-cancel 'yes'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Load "New" Completion System
 autoload -Uz compinit && compinit
+
+zinit cdreplay -q

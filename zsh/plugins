@@ -1,0 +1,7 @@
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+# fzf integration (keybindings and completion)
+zinit light Aloxaf/fzf-tab
+eval "$(fzf --zsh)"

@@ -26,6 +26,9 @@ for function in $function_file; do
     source $function
 done
 
+# load plugins
+source $DOTFILES_ROOT/zsh/plugins
+
 # load theme
 source $DOTFILES_ROOT/zsh/theme
 
