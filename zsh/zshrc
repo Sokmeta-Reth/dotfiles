@@ -3,6 +3,14 @@
 # shortcut to this dotfiles path is $DOTFILES_ROOT
 export DOTFILES_ROOT=$HOME/.dotfiles
 
+# Source/Load zinit
+ZINIT_HOME="$HOME/.local/share/zinit/zinit.git"
+if [[ -f "$ZINIT_HOME/zinit.zsh" ]]; then
+    source "$ZINIT_HOME/zinit.zsh"
+else
+    echo "Zinit not found. Run $DOTFILES_ROOT/zsh/install to install it."
+fi
+
 path_file=($DOTFILES_ROOT/**/*/path(N))
 for file in $path_file; do
     source $file
