@@ -1,0 +1,21 @@
+{
+    "workbench.iconTheme": "bearded-icons",
+    "workbench.colorTheme": "Ayu Mirage",
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "makefile.configureOnOpen": true,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/.pytest_cache": true
+    },
+    "database-client.autoSync": true,
+    "workbench.startupEditor": "none"
+}
