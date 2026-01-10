@@ -1,3 +1,4 @@
+tap "anomalyco/tap"
 tap "hashicorp/tap"
 
 # ----------------------------------- development -----------------------------------
@@ -8,6 +9,7 @@ brew "gh"
 brew "n"
 brew "eza"
 brew "neovim"
+brew "anomalyco/tap/opencode"
 brew "tree-sitter-cli"
 cask "orbstack"
 cask "postman"
