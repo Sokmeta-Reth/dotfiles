@@ -9,6 +9,7 @@ brew "mysql-client"
 brew "php"
 brew "trivy"
 brew "ollama"
+brew "llmfit"
 brew "cocoapods"
 
 # ----------------------------------- networking -----------------------------------
