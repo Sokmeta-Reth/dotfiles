@@ -24,6 +24,7 @@ cask "claude"
 brew "coreutils"
 brew "mole"
 brew "mas"
+brew "herdr"
 
 # ----------------------------------- productivity -----------------------------------
 cask "notion"
@@ -40,6 +41,7 @@ cask "discord"
 cask "nordvpn"
 cask "folx"
 cask "telegram"
+cask "vorssaint"
 
 # ----------------------------------- mac app store -----------------------------------
 mas "Xcode", id: 497799835
