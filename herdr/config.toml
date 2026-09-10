@@ -4,6 +4,12 @@ onboarding = false
 agent_panel_scope = "all"
 
 show_agent_labels_on_pane_borders = true
+status_indicators = "symbols"
+
+# Agent panel as an attention queue — blocked agents rise to the top —
+# rather than grouped by space.
+agent_panel_sort = "priority"
+
 [ui.sound]
 # Relative to this config file's directory, so it follows the dotfiles
 # checkout instead of hardcoding a home path.
@@ -23,3 +29,15 @@ switch_tab = "alt+1..9"
 
 # Workspaces take over the prefixed digits that switch_tab vacated.
 switch_workspace = "prefix+1..9"
+
+[ui.toast]
+delivery = "herdr"
+
+# Breathing room in the sidebar lists — one blank row between entries.
+[ui.sidebar.spaces]
+row_gap = 1
+
+[ui.sidebar.agents]
+row_gap = 1
+# One line per agent: no "machine" (all local) and no "agent" (all claude).
+rows = [["state_icon", "workspace", "tab"]]
