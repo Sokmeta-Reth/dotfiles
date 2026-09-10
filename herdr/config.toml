@@ -1,0 +1,25 @@
+onboarding = false
+
+[ui]
+agent_panel_scope = "all"
+
+show_agent_labels_on_pane_borders = true
+[ui.sound]
+# Relative to this config file's directory, so it follows the dotfiles
+# checkout instead of hardcoding a home path.
+done_path = "sounds/done_quiet.mp3"
+request_path = "sounds/request_quiet.mp3"
+
+[experimental]
+allow_nested = true
+
+[theme]
+name = "vesper"
+
+[keys]
+# Tabs are the frequent hop (one pane per tab), so they get the
+# prefix-free binding. Requires macos_option_as_alt in kitty.conf.
+switch_tab = "alt+1..9"
+
+# Workspaces take over the prefixed digits that switch_tab vacated.
+switch_workspace = "prefix+1..9"
