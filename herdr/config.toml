@@ -20,8 +20,9 @@ request_path = "sounds/request_quiet.mp3"
 allow_nested = true
 
 [theme]
-name = "vesper"
+name = "gruvbox"
 
+auto_switch = false
 [keys]
 # Tabs are the frequent hop (one pane per tab), so they get the
 # prefix-free binding. Requires macos_option_as_alt in kitty.conf.
