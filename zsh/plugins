@@ -6,6 +6,9 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 eval "$(fzf --zsh)"
 
+# zoxide replaces cd (cd <dir> jumps by frecency, cdi for fzf picker)
+eval "$(zoxide init zsh --cmd cd)"
+
 # Add in snippets
 zinit snippet OMZL::git.zsh
 zinit snippet OMZP::git

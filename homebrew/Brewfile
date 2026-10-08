@@ -26,6 +26,7 @@ brew "coreutils"
 brew "mole"
 brew "mas"
 brew "herdr"
+brew "zoxide"
 
 # ----------------------------------- productivity -----------------------------------
 cask "notion"
